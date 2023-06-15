@@ -1,0 +1,10 @@
+const express = require('express')
+const dbconnect = require('./dbconnect')
+const router = require('./routes/userroutes')
+const transaction_routes = require('./routes/transactionroutes')
+const app = express()
+const port = 5000
+app.use(express.json())
+app.use('/api/users',router)
+app.use('/api/transactions',transaction_routes)
+app.listen(port)
